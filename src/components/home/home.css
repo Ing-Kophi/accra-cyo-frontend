@@ -1,0 +1,302 @@
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  min-height: 85vh;
+  background-image: url("/public/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay for text readability */
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+}
+
+/* HIGHLIGHT BLOCKS SECTION */
+.highlight-section {
+  width: 100%;
+}
+
+.highlight-block {
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.highlight-content {
+  max-width: 320px;
+}
+
+.highlight-content h4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.highlight-content p {
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+
+.highlight-content a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* COLOR VARIANTS */
+.highlight-green {
+  background-color: #198754; /* CYO green */
+  color: #ffffff;
+}
+
+.highlight-green a {
+  color: #ffffff;
+}
+
+.highlight-dark {
+  background-color: #212529; /* deep charcoal */
+  color: #ffffff;
+}
+
+.highlight-dark a {
+  color: #f8f9fa;
+}
+
+/* Responsive stacking */
+@media (max-width: 768px) {
+  .highlight-block {
+    min-height: auto;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ACTIVITIES SECTION */
+.activities-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.activity-card {
+  position: relative;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.activity-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: background 0.3s ease;
+}
+
+.activity-card:hover .activity-overlay {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.activity-overlay h5 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.activity-overlay p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* CORE VALUES SECTION */
+.core-values-section {
+  background-color: #198754; /* CYO green */
+  padding: 4rem 0;
+}
+
+.core-values-section h2 {
+  font-weight: 700;
+}
+
+.core-values-section p {
+  opacity: 0.95;
+}
+
+.core-values-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+.core-values-list li {
+  font-size: 1.05rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.core-values-list li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .core-values-section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: #212529; /* dark charcoal */
+  color: #ffffff;
+  padding: 3rem 0 1.5rem;
+}
+
+.site-footer h5,
+.site-footer h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.site-footer p {
+  opacity: 0.9;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.2);
+  margin: 2rem 0 1rem;
+}
+
+/* ABOUT PAGE HERO */
+.about-hero {
+  position: relative;
+  height: 50vh;
+  background-image: url("/public/images/about/about-hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+}
+
+/* ABOUT MISSION & VISION CARDS */
+.about-card {
+  position: relative;
+  height: 320px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.about-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(51, 51, 51, 0.6);
+  color: #ffffff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-card-overlay h4 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.about-card-overlay p {
+  margin-bottom: 0;
+  opacity: 0.95;
+}
+
+/* ABOUT - WHO WE ARE IMAGE */
+.about-who-image {
+  max-height: 380px;
+  object-fit: cover;
+}
+
+/* NEWS & EVENTS HERO */
+.news-hero {
+  position: relative;
+  min-height: 70vh;
+  background-image: url("/public/images/news/news-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #8e8e8f;
+}
+
+.news-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+}
