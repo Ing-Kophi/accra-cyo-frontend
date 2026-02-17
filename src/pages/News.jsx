@@ -63,7 +63,7 @@ export default function News() {
             {/* FALLBACK (OLD POSTS) */}
             {(!n.images || n.images.length === 0) && n.image_url && (
               <img
-                src={`http://localhost:5000/uploads/posts/${n.image_url}`}
+                src={getUploadsUrl(`posts/${n.image_url}`)}
                 className="img-fluid mb-3"
                 alt="news images"
               />
