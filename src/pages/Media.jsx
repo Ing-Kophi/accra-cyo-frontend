@@ -70,7 +70,7 @@ export default function Media() {
           {media.map(m => (
             <div key={m.id} className="col-6 col-md-4 col-lg-3">
               <img
-                  src={getUploadsUrl(`posts/${m.file_name}`)}
+                  src={getUploadsUrl(`media/${m.file_name}`)}
                 alt={m.title}
                 className="img-fluid rounded shadow-sm"
                 style={{
