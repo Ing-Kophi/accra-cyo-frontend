@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../services/api";
 import { Bar, Pie } from "react-chartjs-2";
 import "../utils/chartSetup";
+import Footer from "../components/home/Footer";
 
 export default function PublicFigures() {
   const [years, setYears] = useState([]);
@@ -157,6 +158,7 @@ export default function PublicFigures() {
 
 
   return (
+    <>
     <div className="container my-5">
       <h2 className="text-center cyogreen mb-3">
         National Registration Figures
@@ -283,5 +285,7 @@ export default function PublicFigures() {
         For God and Ghana! — Thanks be to God.
       </p>
     </div>
+    <Footer />
+    </>
   );
 }

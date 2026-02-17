@@ -24,6 +24,9 @@ export default function PublicNavbar() {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#publicNavbar"
+          aria-controls="publicNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>

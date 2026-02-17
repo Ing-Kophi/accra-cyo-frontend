@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import Footer from "../components/home/Footer";
+import { getUploadsUrl } from "../utils/uploads";
 
 const CATEGORIES = [
   "All",
@@ -69,7 +70,7 @@ export default function Media() {
           {media.map(m => (
             <div key={m.id} className="col-6 col-md-4 col-lg-3">
               <img
-                src={`http://localhost:5000/uploads/media/${m.file_name}`}
+                  src={getUploadsUrl(`posts/${img.file_name}`)}
                 alt={m.title}
                 className="img-fluid rounded shadow-sm"
                 style={{

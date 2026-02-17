@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../../services/api";
+import { getUploadsUrl } from "../../../utils/uploads";
 
 export default function MediaList() {
   const [media, setMedia] = useState([]);
@@ -37,7 +38,7 @@ export default function MediaList() {
           <div key={m.id} className="col-md-3">
             <div className="card h-100 shadow-sm">
               <img
-                src={`http://localhost:5000/uploads/media/${m.file_name}`}
+                src={getUploadsUrl(`media/${m.file_name}`)}
                 className="card-img-top"
                 alt={m.title || "Media"}
                 style={{ height: "180px", objectFit: "cover" }}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import Footer from "../components/home/Footer";
+import { getUploadsUrl } from "../utils/uploads";
 
 export default function Contact() {
   const [executives, setExecutives] = useState([]);
@@ -67,7 +68,7 @@ export default function Contact() {
                   <img
                     src={
                       e.photo
-                        ? `http://localhost:5000/uploads/executives/${e.photo}`
+                        ? getUploadsUrl(`executives/${e.photo}`)
                         : "/no-photo.png"
                     }
                     alt={e.full_name}

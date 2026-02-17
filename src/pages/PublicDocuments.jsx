@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import Footer from "../components/home/Footer";
+import { getUploadsUrl } from "../utils/uploads";
 
 export default function PublicDocuments() {
   const [documents, setDocuments] = useState([]);
@@ -71,7 +72,7 @@ export default function PublicDocuments() {
                     </p>
 
                     <a
-                      href={`http://localhost:5000/uploads/documents/${doc.file}`}
+                      href={getUploadsUrl(`documents/${doc.file}`)}
                       className="btn btn-outline-success btn-sm mt-2"
                       target="_blank"
                       rel="noopener noreferrer"

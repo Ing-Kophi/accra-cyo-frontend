@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import Footer from "../components/home/Footer";
+import { getUploadsUrl } from "../utils/uploads";
 
 export default function News() {
   const [posts, setPosts] = useState([]);
@@ -49,7 +50,7 @@ export default function News() {
                 {n.images.slice(0, 3).map(img => (
                   <div key={img.id} className="col-md-4">
                     <img
-                      src={`http://localhost:5000/uploads/posts/${img.file_name}`}
+                      src={getUploadsUrl(`posts/${img.file_name}`)}
                       className="img-fluid rounded"
                       style={{ height: "200px", objectFit: "cover" }}
                       alt="news images"

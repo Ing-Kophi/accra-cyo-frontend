@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../../services/api";
+import { getUploadsUrl } from "../../../utils/uploads";
 
 export default function Executives() {
   const [executives, setExecutives] = useState([]);
@@ -50,7 +51,7 @@ export default function Executives() {
                 <img
                   src={
                     e.photo
-                      ? `http://localhost:5000/uploads/executives/${e.photo}`
+                      ? getUploadsUrl(`executives/${e.photo}`)
                       : "/no-photo.png"
                   }
                   alt={e.full_name}

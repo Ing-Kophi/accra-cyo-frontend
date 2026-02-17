@@ -24,9 +24,10 @@ export default function About() {
             <div className="col-md-6">
             <h3 className="cyogreen mb-3">Who We Are</h3>
             <p>
-                The Catholic Youth Organization (CYO) of the Accra Archdiocese
-                is the official youth movement of the Archdiocese, dedicated
-                to the holistic formation of young people in the Catholic faith.
+                The Catholic Youth Organization (CYO) is an Organization, which takes the Parish as its base,
+                and without regard to social class or profession, provides for young people a Christian 
+                community life, in order to prepare them for active co-operation in building a living Church 
+                and a better world.
             </p>
             <p>
                 The organization brings together children, adolescents, and
@@ -77,9 +78,9 @@ export default function About() {
                 <div className="about-card-overlay">
                     <h4>Our Vision</h4>
                     <p>
-                    A vibrant and disciplined Catholic youth community,
-                    witnessing Christ in society through faith,
-                    leadership, and service.
+                    To inspire, direct and guide the natural creative qualities
+                    and desire of young people by promoting activities that will adequately meet
+                    their physical, mental and spiritual needs.
                     </p>
                 </div>
                 </div>
