@@ -54,19 +54,19 @@ export default function PublicNavbar() {
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold" to="/registration-figures">
+              <NavLink className="nav-link" to="/registration-figures">
                 National Registration
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold" to="/media">
+              <NavLink className="nav-link" to="/media">
                 Media
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link fw-bold" to="/contact_us">
+              <NavLink className="nav-link" to="/contact_us">
                 Contact Us
               </NavLink>
             </li>

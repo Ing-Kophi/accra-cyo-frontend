@@ -246,10 +246,9 @@
 .about-card {
   position: relative;
   height: 320px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -257,7 +256,7 @@
 .about-card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(51, 51, 51, 0.6);
+  background: transparent;
   color: #ffffff;
   padding: 2rem;
   display: flex;

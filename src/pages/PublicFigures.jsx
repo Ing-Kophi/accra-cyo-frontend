@@ -3,6 +3,7 @@ import api from "../services/api";
 import { Bar, Pie } from "react-chartjs-2";
 import "../utils/chartSetup";
 import Footer from "../components/home/Footer";
+import "./PublicFigures.css";
 
 export default function PublicFigures() {
   const [years, setYears] = useState([]);
@@ -206,20 +207,32 @@ export default function PublicFigures() {
 
             <div className="row">
             <div className="col-md-6 mb-4">
-                <h6 className="text-center">Total per Deanery</h6>
-                <Bar data={totalPerDeaneryChart} />
+                <div className="chart-card">
+                  <h6 className="text-center chart-card-title">Total per Deanery</h6>
+                  <div className="chart-wrap">
+                    <Bar data={totalPerDeaneryChart} />
+                  </div>
+                </div>
             </div>
 
             <div className="col-md-6 mb-4">
-                <h6 className="text-center">Male vs Female per Deanery</h6>
-                <Bar data={genderStackedChart} options={stackedOptions} />
+                <div className="chart-card">
+                  <h6 className="text-center chart-card-title">Male vs Female per Deanery</h6>
+                  <div className="chart-wrap">
+                    <Bar data={genderStackedChart} options={stackedOptions} />
+                  </div>
+                </div>
             </div>
             </div>
 
             <div className="row justify-content-center">
             <div className="col-md-6">
-                <h6 className="text-center">Distribution by Rank</h6>
-                <Pie data={rankPieChart} options={chartOptions} />
+                <div className="chart-card">
+                  <h6 className="text-center chart-card-title">Distribution by Rank</h6>
+                  <div className="chart-wrap">
+                    <Pie data={rankPieChart} options={chartOptions} />
+                  </div>
+                </div>
             </div>
             </div>
         </>

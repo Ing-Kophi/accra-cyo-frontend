@@ -13,6 +13,17 @@ export default function Contact() {
   });
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState("");
+  const [errors, setErrors] = useState({
+    name: "",
+    email: ""
+  });
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false
+  });
+
+  const nameRegex = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   useEffect(() => {
     api.get("/contacts/executives/public").then(res => {
@@ -24,12 +35,61 @@ export default function Contact() {
     });
   }, []);
 
+  const validateField = (fieldName, value) => {
+    if (fieldName === "name") {
+      if (!value.trim()) return "Your name is required.";
+      if (!nameRegex.test(value.trim())) {
+        return "Name can only contain letters, spaces, and hyphens.";
+      }
+    }
+
+    if (fieldName === "email") {
+      if (!value.trim()) return "Your email is required.";
+      if (!emailRegex.test(value.trim())) {
+        return "Please enter a valid email address.";
+      }
+    }
+
+    return "";
+  };
+
+  const validateForm = () => {
+    const nextErrors = {
+      name: validateField("name", form.name),
+      email: validateField("email", form.email)
+    };
+
+    setErrors(nextErrors);
+    return !nextErrors.name && !nextErrors.email;
+  };
+
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    setSuccess("");
+
+    if (touched[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: validateField(name, value)
+      }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => ({
+      ...prev,
+      [name]: validateField(name, value)
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setTouched({ name: true, email: true });
+    if (!validateForm()) return;
+
     setSending(true);
     setSuccess("");
 
@@ -69,8 +129,12 @@ export default function Contact() {
                     src={
                       e.photo
                         ? getUploadsUrl(`executives/${e.photo}`)
-                        : "/no-photo.png"
+                        : "/dummy_user.png"
                     }
+                    onError={(ev) => {
+                      ev.currentTarget.onerror = null;
+                      ev.currentTarget.src = "/dummy_user.png";
+                    }}
                     alt={e.full_name}
                     className="rounded-circle mb-3"
                     width="120"
@@ -123,11 +187,18 @@ export default function Contact() {
             <label className="form-label">Your Name</label>
             <input
               name="name"
-              className="form-control"
+              className={`form-control ${
+                touched.name && errors.name ? "is-invalid" : ""
+              }`}
               value={form.name}
               onChange={handleChange}
+              onBlur={handleBlur}
+              autoComplete="name"
               required
             />
+            {touched.name && errors.name && (
+              <div className="invalid-feedback">{errors.name}</div>
+            )}
           </div>
 
           <div className="mb-3">
@@ -135,11 +206,18 @@ export default function Contact() {
             <input
               type="email"
               name="email"
-              className="form-control"
+              className={`form-control ${
+                touched.email && errors.email ? "is-invalid" : ""
+              }`}
               value={form.email}
               onChange={handleChange}
+              onBlur={handleBlur}
+              autoComplete="email"
               required
             />
+            {touched.email && errors.email && (
+              <div className="invalid-feedback">{errors.email}</div>
+            )}
           </div>
 
           <div className="mb-3">
