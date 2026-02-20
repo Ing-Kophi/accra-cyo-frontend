@@ -245,7 +245,7 @@
 /* ABOUT MISSION & VISION CARDS */
 .about-card {
   position: relative;
-  height: 320px;
+  height: 420px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -253,26 +253,47 @@
   overflow: hidden;
 }
 
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(2px) brightness(0.72);
+  transform: scale(1.04);
+}
+
 .about-card-overlay {
   position: absolute;
   inset: 0;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.08);
   color: #ffffff;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  z-index: 1;
 }
 
 .about-card-overlay h4 {
   font-weight: 700;
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
 }
 
 .about-card-overlay p {
   margin-bottom: 0;
   opacity: 0.95;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    height: 500px;
+  }
 }
 
 /* ABOUT - WHO WE ARE IMAGE */
